@@ -1,0 +1,222 @@
+$strong-cyan: hsl(172, 67%, 45%);
+
+// // Neutral
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Space Mono";
+}
+
+.container{
+  height:100vh;
+  width:100%;
+  background-color:$light-grayish-cyan;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  height: 45rem;
+  width: 95rem;
+  background-color:white;
+  border-radius:2.5rem;
+  display:flex;
+  padding:2.5rem;
+
+  &__left{
+    height:100%;
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:2rem;
+
+    &__tip{
+
+      &__text{
+        font-size: 1.25rem;
+        margin-bottom:1rem;
+      }
+      &__grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows:2(2,1fr);
+        grid-gap:2rem;
+
+        .button{
+          height:4.5rem;
+          width:12rem;
+          border:none;
+          border-radius:.75rem;
+          background-color: $very-dark-cyan;
+          color:white;
+          font-size: 2rem;
+          font-family: "Space Mono";
+
+          &:focus {
+            outline: none;
+          }
+
+          &:hover{
+            background-color:$strong-cyan;
+            color:$very-dark-cyan;
+          }
+        }
+
+
+        input::placeholder {
+          text-align: center;
+          color:white;
+        }
+      }
+    }
+
+    &__bill {
+      width:94%;
+      height:6rem;
+      
+
+      &__box{
+        position: relative;
+        display:flex;
+        background-color: $very-light-grayish-cyan;
+        align-items: center;
+        padding-left:1rem;
+        border-radius:1rem;
+
+        &:hover{
+          outline: none;
+          box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2), 0 0 0 0px #fff, 0 0 0 3px $strong-cyan;
+          border-radius: 8px;
+        }
+        &-svg{
+          z-index: 2;
+          position: absolute;
+          left:0.5rem;
+        }
+
+        &__input{
+        margin-top:0.75rem;
+        width:100%;
+        height:4.5rem;
+        border:none;
+        background-color:$very-light-grayish-cyan;
+        z-index: 1;
+        
+        
+        &:focus {
+          outline: none;
+        }
+        
+      }
+
+      }
+
+      &__text{
+        font-size: 1.25rem;
+        margin-bottom:1rem;
+      }
+
+    }
+
+    &__people{
+      .fix{
+        position: relative;
+        display:flex;
+        background-color: $very-light-grayish-cyan;
+        align-items: center;
+        border-radius:1rem;
+      }
+
+      &__text{
+        font-size: 1.25rem;
+        margin-bottom:1rem;
+      }
+      &__input{
+        width:100%;
+        height:4.5rem;
+        border:none;
+        background-color:$very-light-grayish-cyan;
+        z-index: 1;
+        padding-left:2rem;
+
+        &:hover{
+          outline: none;
+          box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2), 0 0 0 0px #fff, 0 0 0 3px $strong-cyan;
+          border-radius: 8px;
+          
+        }
+      }
+    }
+
+  }
+
+  &__right{
+    height:100%;
+    width:50%;
+    background-color: $very-dark-cyan;
+    border-radius:2.5rem;
+    padding:3rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items:center;
+
+    &-button{
+      height:4rem;
+      width:90%;
+      background-color: $strong-cyan;
+      border-style:none;
+      border-radius:.5rem;
+      font-family: space mono;
+      font-size:large;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color:$very-dark-cyan;
+      margin-top:8rem;
+
+      &:hover{
+        background-color: $grayish-cyan;
+        color:$strong-cyan;
+      }
+    }
+
+    &__total{
+      display:flex;
+      justify-content:space-between;
+      width:90%;
+      font-size:1.25rem;
+
+      &__text{
+        color:white;
+        align-self:center;
+        &-1{
+        }
+        &-2{
+          color:lightslategrey;
+        }
+      }
+      &__num{
+        color:$strong-cyan;
+        font-size:4rem;
+      }
+    }
+  }
+
+}
